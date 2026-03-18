@@ -1,26 +1,32 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
+import Form from "./Form";
+import List from "./List";
 
 //create your first component
 const Home = () => {
+	const [dataList, setDataList] = useState([])
+	// const [showList, setShowList] = useState(false);
+
+	const upDateList = (newInputValue) => {
+		if (newInputValue.trim() === "") return;
+		setDataList([...dataList, newInputValue]);
+	};
+
+	// useEffect(()=>{
+	// 	if(dataList.length>0) return setShowList(true);
+	// 	return setShowList(false)
+	// 	}, [dataList])
+
+	const showList = dataList.length > 0
+
 	return (
 		<div className="text-center">
-            
-
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+            <Form list={dataList} upDateList={upDateList} />
+			{showList && <List data={dataList} />}
+			
 		</div>
 	);
 };
