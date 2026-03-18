@@ -15,17 +15,22 @@ const Home = () => {
 		setDataList([...dataList, newInputValue]);
 	};
 
+	const deleteTask = (index) => {
+		const newTask = dataList.filter((_, i) => i !== index);
+		setDataList(newTask);
+	};
+
 	// useEffect(()=>{
 	// 	if(dataList.length>0) return setShowList(true);
 	// 	return setShowList(false)
 	// 	}, [dataList])
 
-	const showList = dataList.length > 0
+	// const showList = dataList.length > 0
 
 	return (
 		<div className="text-center">
             <Form list={dataList} upDateList={upDateList} />
-			{showList && <List data={dataList} />}
+			<List data={dataList} deleteTask={deleteTask} />
 			
 		</div>
 	);
