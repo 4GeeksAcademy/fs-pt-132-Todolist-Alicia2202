@@ -9,3 +9,12 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+.delete-icon{
+    opacity: 0;
+    transition: opacity 0 2s ease;
+    cursor: pointer; 
+}
+
+.task-item:hover .delete-icon{
+    opacity: 1;
+}
