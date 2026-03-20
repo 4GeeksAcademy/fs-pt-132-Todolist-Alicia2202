@@ -6,7 +6,7 @@ const List = ({data, deleteTask}) => {
         <>
         <ul className="list-group notebook">
             {data.length === 0 ? (
-                <li className="list-group-item">No hay tareas, añade</li>
+                <li className="list-group-item">No hay tareas, añadir tareas</li>
             ): ( data.map((el, i) => (
             <li 
             key={i} className="list-group-item d-flex justify-content-between task-item"> 
