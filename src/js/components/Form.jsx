@@ -16,7 +16,7 @@ const Form = ({ list, upDateList }) => {
 
 return (
     <form onSubmit={handleSubmit}>
-        <input type="text" value={inputValue} onChange={handleChange} />
+        <input type="text" value={inputValue} onChange={handleChange} placeholder="Escribe tu tarea" className="form-control w-100 w-md-50"/>
         <input type="submit" hidden />
     </form>
 )

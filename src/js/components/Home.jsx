@@ -28,7 +28,9 @@ const Home = () => {
 	// const showList = dataList.length > 0
 
 	return (
-		<div className="text-center">
+		<div className="container d-flex flex-column  align-items-center">
+
+			<h1 className="mt-4">Lista de tareas</h1>
             <Form list={dataList} upDateList={upDateList} />
 			<List data={dataList} deleteTask={deleteTask} />
 			

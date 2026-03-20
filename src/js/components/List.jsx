@@ -4,7 +4,7 @@ const List = ({data, deleteTask}) => {
 
     return (
         <>
-        <ul className="list-group">
+        <ul className="list-group notebook">
             {data.length === 0 ? (
                 <li className="list-group-item">No hay tareas, añade</li>
             ): ( data.map((el, i) => (
